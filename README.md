@@ -22,21 +22,17 @@ TODO: Show the coverage results provided by the existing tool with a screenshot
 
 ### Individual tests
 
-TODO: The following is supposed to be repeated for each group member
+Tijn:
 
-TODO: Group member name
+![Screenshot 1](resources/Screenshot%20from%202025-06-12%2022-31-55.png)
+  
+![Screenshot 2](resources/Screenshot%20from%202025-06-12%2022-54-06.png)
 
-TODO: Test 1
+Initial test coverage was 22%. After adding two additional tests—covering the functions `create_new_store()` and `print_help()`—coverage increased to 28%.
 
-TODO: Show a patch (diff) or a link to a commit made in your repository that shows the new test
+This increase was expected since the new tests are relatively simple helper tests. The `print_help()` test may seem redundant, but including it helps improve coverage and ensures that the printed help text is less likely to be changed accidentally.
 
-TODO: Provide a screenshot of the old coverage results (the same as you already showed above)
-
-TODO: Provide a screenshot of the new coverage results
-
-TODO: State the coverage improvement with a number and elaborate on why the coverage is improved
-
-Repeat for other tests...
+Overall, while the coverage gain is modest, these tests contribute to the total coverage and are important for maintaining code quality.
 
 ### Overall
 
