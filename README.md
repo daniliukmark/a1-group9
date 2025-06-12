@@ -73,6 +73,22 @@ def test_load_store_success(tmp_path):
         self.assertNotIn("gmail", passwords)
         self.assertIn("deleted", output.lower())
 
+# tijn
+def test_create_new_store_success():
+
+    with patch("getpass.getpass", side_effect=["lalala123", "lalala123"]):
+        f = io.StringIO()
+
+        with redirect_stdout(f):
+            store, password = create_new_store()
+
+    out = f.getvalue()
+
+    assert "NO current vault, creating new one...." in out
+    assert "New vault created" in out
+    assert store == {}
+    assert password == "lalala123"
+
 ```
 
 ### Coverage of initial tests
