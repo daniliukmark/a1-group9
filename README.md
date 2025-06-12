@@ -20,7 +20,7 @@ import sys
 
 from src import vault
 
-
+# arek
 def test_store_roundtrip(tmp_path):
     test_passwords = {"test_service": {"username": "test_user", "password": "test_pass"}}
     master_password = "master123"
@@ -38,6 +38,22 @@ def test_store_roundtrip(tmp_path):
             assert "encrypted_data" in file_content
             
             mock_rename.assert_called_with(file_path + ".tmp", file_path)
+
+# mark
+def test_load_store_success(tmp_path):
+    file_path = tmp_path / "vault.json"
+    original_passwords = {"service1": {"username": "user1", "password": "password1"}}
+    master_password = "correct_password"
+
+    vault.save_store(str(file_path), original_passwords, master_password)
+
+    with patch("getpass.getpass", return_value=master_password), patch(
+        "builtins.print"
+    ):
+        loaded_passwords, loaded_master_pw = vault.load_store(str(file_path))
+
+    assert loaded_passwords == original_passwords
+    assert loaded_master_pw == master_password
 
 ```
 
