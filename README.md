@@ -2,9 +2,9 @@
 
 ## Project
 
-Description: TODO
+Description: A secure password manager
 
-Programming language: TODO
+Programming language: Python
 
 ## Initial tests
 
