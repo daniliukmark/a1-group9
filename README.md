@@ -95,7 +95,8 @@ def test_create_new_store_success():
 
 Tools: pytest unitets
 
-TODO: Show the coverage results provided by the existing tool with a screenshot
+initial:
+![Screenshot 1](resources/initial.png)
 
 ## Coverage improvement
 
@@ -147,8 +148,8 @@ The relatively low coverage of 29% is mainly due to the fact that this test exer
 Since handle_del() is one of the few fully tested functions, your total coverage improves by ~10%. In fact, each test covers a different logical branch inside handle_del().
 
 ### Overall
-
-TODO: Provide a screenshot of the old coverage results by running an existing tool (the same as you already showed above)
+initial:
+![Screenshot 1](resources/initial.png)
 
 after:
 ![Screenshot 1](resources/final.png)
