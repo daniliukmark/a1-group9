@@ -121,23 +121,30 @@ Arek:
 
 Managed to achieve a 13% increase in test coverage. My original tests were test_store_roundtrip and test_save_is_atomic, then I eended up adding test_invalid_master_password and test_create_new_store
 
-
 Mark:
 
 Screenshot 1: Initial Coverage Report
 
-
 ![Screenshot 3](resources/mark1.png)
-
-
 
 Screenshot 2: Final Coverage Report
 
 ![Screenshot 4](resources/mark2.png)
 
-
 Initial test coverage for src/vault.py was 35%, established by a single baseline test. After adding three new, targeted tests, the coverage for the application source code increased significantly to 54%. This represents a total improvement of 19%.
 The substantial increase in coverage is due to the strategic addition of tests that target previously uncovered execution paths, including error handling, specific logic branches, and interactive loop conditions.
+
+Felice: 
+
+Only the first test case was active, targeting the `handle_del` function when the service is present in the password dictionary.
+
+![image](https://github.com/user-attachments/assets/c2016557-8160-446c-b077-1d334509a789)
+
+The relatively low coverage of 29% is mainly due to the fact that this test exercises only one path of one function (`handle_del`), all the rest remains cutted out. Then we added other two tests and improved the coverage to 39%.
+
+![image](https://github.com/user-attachments/assets/e7a1533a-7568-4b33-9ae7-0390da6cffd3)
+
+Since handle_del() is one of the few fully tested functions, your total coverage improves by ~10%. In fact, each test covers a different logical branch inside handle_del().
 
 ### Overall
 
@@ -159,5 +166,5 @@ Felix:
 | --- | --- | --- | --- |
 | Member Mark | derive_key, load store | | |
 | Member Arek | handle_get, handle_set, handle_list| test_store_roundtrip | test_save_is_atomic, test_invalid_master_password, test_create_new_store|
-| Member Tijn | create_new_store, print_store, print_help | test_create_new_store_success | test_create_new_store_password_mismatch, test_print_help_output |
-| Member D | | | |
+| Member Tijn | create_new_store, print_store, print_help | test_create_new_store_success | test_create_new_store_password_mismatch, test_print_help_output|
+| Member Felice | handle_del, interactive_session, main() | test_serviceExists_RemovedSuccessfully, test_serviceNotFound_PrintsMessage, test_missingArgument_PrintsUsage|
