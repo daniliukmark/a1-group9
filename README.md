@@ -54,9 +54,9 @@ Arek:
 
 Felix:
 
-| Member | Three functions (names with links to the code on the repository) created | Initial test (name) | Other tests (names) |
+| Member | Three functions created | Initial test (name) | Other tests (names) |
 | --- | --- | --- | --- |
-| Member A | | | |
+| Member Mark | derive_key, load store | | |
 | Member B | | | |
 | Member C | | | |
 | Member D | | | |
