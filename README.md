@@ -162,7 +162,7 @@ Tijn: I wrote 3 functions in vault.py: Savestore, createnewstore, and printhelp.
 
 Arek: I wrote 3 functions in vault.py and 4 tests
 
-Felix:
+Felice: I wrote 3 functions in vault.py: handle_del, interactive_session, and main. Then I created 3 different tests.
 
 | Member | Three functions created | Initial test (name) | Other tests (names) |
 | --- | --- | --- | --- |
