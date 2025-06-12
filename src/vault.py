@@ -94,3 +94,37 @@ def save_store(filepath: str, passwords: dict, master_password: str): #encrypt a
 
     os.rename(temp_filepath, filepath)
     print(f"Vault saved and locked at '{filepath}'.")
+
+def handle_get(passwords: dict, parts: list):
+    """Handles the 'get' command."""
+    if len(parts) != 2:
+        print("Usage: get <service>")
+        return
+    service = parts[1]
+    entry = passwords.get(service)
+    if not entry:
+        print(f"Service '{service}' not found.")
+        return
+    print(f"Service:  {service}")
+    print(f"Username: {entry['username']}")
+    print(f"Password: {entry['password']}")
+
+
+def handle_set(passwords: dict, parts: list):
+    """Handles the 'set' command."""
+    if len(parts) != 4:
+        print("Usage: set <service> <username> <password>")
+        return
+    service, username, password = parts[1], parts[2], parts[3]
+    passwords[service] = {"username": username, "password": password}
+    print(f"Password for '{service}' has been set.")
+
+
+def handle_list(passwords: dict):
+    """Handles the 'list' command."""
+    if not passwords:
+        print("No passwords stored yet.")
+        return
+    print("Services stored:")
+    for service in sorted(passwords.keys()):
+        print(f"  - {service}")
