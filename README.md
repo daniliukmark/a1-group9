@@ -57,6 +57,6 @@ Felix:
 | Member | Three functions created | Initial test (name) | Other tests (names) |
 | --- | --- | --- | --- |
 | Member Mark | derive_key, load store | | |
-| Member Arek | | | |
+| Member Arek | handle_get, handle_set, handle_list| test_store_roundtrip | test_save_is_atomic, test_invalid_master_password, test_create_new_store|
 | Member C | | | |
 | Member D | | | |
