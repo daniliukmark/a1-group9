@@ -46,7 +46,13 @@ TODO: Provide a screenshot of the new coverage results by running the existing t
 
 ## Statement of individual contributions
 
-TODO: Write what each group member did. Use the following table for that and add additional text under it if you see fit.
+Mark:
+
+Tijn: I wrote 3 functions in vault.py: Savestore, createnewstore, and printhelp.
+
+Arek:
+
+Felix:
 
 | Member | Three functions (names with links to the code on the repository) created | Initial test (name) | Other tests (names) |
 | --- | --- | --- | --- |
