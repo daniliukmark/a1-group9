@@ -150,7 +150,8 @@ Since handle_del() is one of the few fully tested functions, your total coverage
 
 TODO: Provide a screenshot of the old coverage results by running an existing tool (the same as you already showed above)
 
-TODO: Provide a screenshot of the new coverage results by running the existing tool using all test modifications made by the group
+after:
+![Screenshot 1](resources/final.png)
 
 ## Statement of individual contributions
 
