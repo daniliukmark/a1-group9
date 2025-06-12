@@ -10,7 +10,36 @@ Programming language: Python
 
 ### Tests
 
-TODO: Add their code here
+```
+import os
+import pytest
+from unittest.mock import patch, mock_open, MagicMock, call
+import json
+import base64
+import sys
+
+from src import vault
+
+
+def test_store_roundtrip(tmp_path):
+    test_passwords = {"test_service": {"username": "test_user", "password": "test_pass"}}
+    master_password = "master123"
+    file_path = str(tmp_path / "test_vault.json")
+    
+    with patch('os.urandom', return_value=b'fixed_salt_12345'):
+        mock_file = mock_open()
+        with patch('builtins.open', mock_file), \
+             patch('os.rename') as mock_rename:
+            vault.save_store(file_path, test_passwords, master_password)
+            
+            written = "".join(call.args[0] for call in mock_file().write.call_args_list)
+            file_content = json.loads(written)
+            assert "salt" in file_content
+            assert "encrypted_data" in file_content
+            
+            mock_rename.assert_called_with(file_path + ".tmp", file_path)
+
+```
 
 ### Coverage of initial tests
 
