@@ -50,13 +50,13 @@ Mark:I wrote 2 functions,3 tests and helped finish the readme.md report file.
 
 Tijn: I wrote 3 functions in vault.py: Savestore, createnewstore, and printhelp.
 
-Arek:
+Arek: I wrote 3 functions in vault.py and 4 tests
 
 Felix:
 
 | Member | Three functions created | Initial test (name) | Other tests (names) |
 | --- | --- | --- | --- |
 | Member Mark | derive_key, load store | | |
-| Member B | | | |
+| Member Arek | | | |
 | Member C | | | |
 | Member D | | | |
