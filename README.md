@@ -44,7 +44,7 @@ TODO: Provide a screenshot of the new coverage results by running the existing t
 
 Mark:I wrote 2 functions,3 tests and helped finish the readme.md report file.
 
-Tijn: I wrote 3 functions in vault.py: Savestore, createnewstore, and printhelp.
+Tijn: I wrote 3 functions in vault.py: Savestore, createnewstore, and printhelp. Created 3 tests, found in tests/tests_tijn.py. Helped with the README.md.
 
 Arek: I wrote 3 functions in vault.py and 4 tests
 
