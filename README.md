@@ -55,6 +55,24 @@ def test_load_store_success(tmp_path):
     assert loaded_passwords == original_passwords
     assert loaded_master_pw == master_password
 
+# felix
+
+    def test_handle_del_ServiceExists_RemovedSuccessfully(self):
+
+        """Should remove the service when it exists and print confirmation."""
+
+        passwords = {"gmail": {"username": "john", "password": "123"}, "github": {"username": "jane", "password": "abc"}}
+        parts = ["del", "gmail"]
+        
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        handle_del(passwords, parts)
+        sys.stdout = sys.__stdout__
+        output = captured_output.getvalue()
+
+        self.assertNotIn("gmail", passwords)
+        self.assertIn("deleted", output.lower())
+
 ```
 
 ### Coverage of initial tests
