@@ -42,6 +42,24 @@ Arek:
 
 Managed to achieve a 13% increase in test coverage. My original tests were test_store_roundtrip and test_save_is_atomic, then I eended up adding test_invalid_master_password and test_create_new_store
 
+
+Mark:
+
+Screenshot 1: Initial Coverage Report
+
+
+![Screenshot 3](resources/mark1.png)
+
+
+
+Screenshot 2: Final Coverage Report
+
+![Screenshot 4](resources/mark2.png)
+
+
+Initial test coverage for src/vault.py was 35%, established by a single baseline test. After adding three new, targeted tests, the coverage for the application source code increased significantly to 54%. This represents a total improvement of 19%.
+The substantial increase in coverage is due to the strategic addition of tests that target previously uncovered execution paths, including error handling, specific logic branches, and interactive loop conditions.
+
 ### Overall
 
 TODO: Provide a screenshot of the old coverage results by running an existing tool (the same as you already showed above)
