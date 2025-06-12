@@ -93,7 +93,7 @@ def test_create_new_store_success():
 
 ### Coverage of initial tests
 
-TODO: Inform the name of the existing tool that was executed and how it was executed
+TODO: pytest unitets
 
 TODO: Show the coverage results provided by the existing tool with a screenshot
 
