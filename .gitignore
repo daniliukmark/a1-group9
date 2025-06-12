@@ -1,0 +1,20 @@
+# Password vault files - DO NOT COMMIT THESE
+*.safe
+*.tmp
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# IDE/Editor specific files
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
