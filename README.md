@@ -34,6 +34,14 @@ This increase was expected since the new tests are relatively simple helper test
 
 Overall, while the coverage gain is modest, these tests contribute to the total coverage and are important for maintaining code quality.
 
+Arek: 
+
+<img width="810" alt="Screenshot 2025-06-12 at 23 20 04" src="https://github.com/user-attachments/assets/52895360-dc46-495d-beae-e5a3c6adc28d" />
+
+<img width="384" alt="Screenshot 2025-06-12 at 23 19 41" src="https://github.com/user-attachments/assets/bb1f4663-2e87-45d7-8d21-952ceac3a743" />
+
+Managed to achieve a 13% increase in test coverage. My original tests were test_store_roundtrip and test_save_is_atomic, then I eended up adding test_invalid_master_password and test_create_new_store
+
 ### Overall
 
 TODO: Provide a screenshot of the old coverage results by running an existing tool (the same as you already showed above)
