@@ -167,4 +167,4 @@ Felix:
 | Member Mark | derive_key, load store | test_load_store_success | test_interactive_session_unknown_command test_handle_list_sorted_output test_load_store_corrupted_file |
 | Member Arek | handle_get, handle_set, handle_list| test_store_roundtrip | test_save_is_atomic, test_invalid_master_password, test_create_new_store|
 | Member Tijn | create_new_store, print_store, print_help | test_create_new_store_success | test_create_new_store_password_mismatch, test_print_help_output|
-| Member Felice | handle_del, interactive_session, main() | test_serviceExists_RemovedSuccessfully, test_serviceNotFound_PrintsMessage, test_missingArgument_PrintsUsage|
+| Member Felice | handle_del, interactive_session, main() | test_serviceExists_RemovedSuccessfully | test_serviceNotFound_PrintsMessage, test_missingArgument_PrintsUsage|
