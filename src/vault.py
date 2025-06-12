@@ -47,3 +47,50 @@ def load_store(filepath: str) -> (dict, str):
     except InvalidToken:
         print("Error: Invalid master password or corrupted file.")
         sys.exit(1)
+
+
+def print_help(): #print nice disply of help commands
+
+    print("\nAvailable commands:")
+    print("  get <service>              - Get password for a service")
+    print("  set <service> <user> <pass>- Add/update a password")
+    print("  del <service>              - Delete a password")
+    print("  list                       - List all services")
+    print("  help                       - Show this help message")
+    print("  exit                       - Save and exit the vault\n")
+
+
+
+def create_new_store() -> tuple[dict, str]: #create master password, return dict with master password
+    print("NO current vault, creating new one....")
+    master_password = getpass.getpass("Enter NEW(!) password: ")
+    confirm_password = getpass.getpass("Confirm password: ")
+
+    if master_password != confirm_password:
+        print("You entered a different confirmation password/phrase")
+        sys.exit(1)
+
+    print("New vault created :)")
+    return {}, master_password
+
+
+def save_store(filepath: str, passwords: dict, master_password: str): #encrypt and save pw to file
+    
+    salt = os.urandom(SALT_SIZE)
+    key = derive_key(master_password, salt)
+    fernet = Fernet(key)
+
+    passwords_bytes = json.dumps(passwords).encode()
+    encrypted_data = fernet.encrypt(passwords_bytes)
+
+    file_content = {
+        "salt": base64.b64encode(salt).decode("utf-8"),
+        "encrypted_data": base64.b64encode(encrypted_data).decode("utf-8"),
+    }
+
+    temp_filepath = filepath + ".tmp"
+    with open(temp_filepath, "w") as f:
+        json.dump(file_content, f, indent=2)
+
+    os.rename(temp_filepath, filepath)
+    print(f"Vault saved and locked at '{filepath}'.")
