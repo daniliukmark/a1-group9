@@ -204,5 +204,5 @@ def main():
             print("Exiting without saving due to an unexpected error.")
 
 
-if _name_ == "_main_":
-    main()
+if __name__ == "__main__":
+    main()
