@@ -54,5 +54,5 @@ Felix:
 | --- | --- | --- | --- |
 | Member Mark | derive_key, load store | | |
 | Member Arek | handle_get, handle_set, handle_list| test_store_roundtrip | test_save_is_atomic, test_invalid_master_password, test_create_new_store|
-| Member C | | | |
+| Member Tijn | create_new_store, print_store, print_help | test_create_new_store_success | test_create_new_store_password_mismatch, test_print_help_output |
 | Member D | | | |
