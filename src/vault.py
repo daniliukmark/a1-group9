@@ -128,3 +128,81 @@ def handle_list(passwords: dict):
     print("Services stored:")
     for service in sorted(passwords.keys()):
         print(f"  - {service}")
+
+def handle_del(passwords: dict, parts: list):
+    """Handles the 'del' command."""
+    if len(parts) != 2:
+        print("Usage: del <service>")
+        return
+    service = parts[1]
+    if service in passwords:
+        del passwords[service]
+        print(f"Password for '{service}' deleted.")
+    else:
+        print(f"Service '{service}' not found.")
+
+
+def interactive_session(passwords: dict) -> dict:
+    """Runs the main interactive command loop."""
+    print_help()
+    while True:
+        try:
+            raw_input = inputimeout(
+                prompt="> ", timeout=TIMEOUT_SECONDS
+            )
+            parts = raw_input.strip().split()
+
+            if not parts:
+                continue
+
+            command = parts[0].lower()
+
+            if command == "exit":
+                return passwords
+            elif command == "help":
+                print_help()
+            elif command == "list":
+                handle_list(passwords)
+            elif command == "get":
+                handle_get(passwords, parts)
+            elif command == "set":
+                handle_set(passwords, parts)
+            elif command == "del":
+                handle_del(passwords, parts)
+            else:
+                print(
+                    f"Unknown command: '{command}'. Type 'help' for a list."
+                )
+
+        except TimeoutOccurred:
+            print("\nInactivity timeout reached. Locking vault.")
+            return passwords
+
+def main():
+    """Main entry point for the script."""
+    if len(sys.argv) != 2:
+        print(f"Usage: python {sys.argv[0]} <filepath>")
+        sys.exit(1)
+
+    filepath = sys.argv[1]
+
+    if os.path.exists(filepath):
+        passwords, master_password = load_store(filepath)
+    else:
+        passwords, master_password = create_new_store()
+
+    updated_passwords = None
+    try:
+        updated_passwords = interactive_session(passwords)
+    except KeyboardInterrupt:
+        print("\nCtrl+C detected. Saving and exiting.")
+        updated_passwords = passwords
+    finally:
+        if updated_passwords is not None:
+            save_store(filepath, updated_passwords, master_password)
+        else:
+            print("Exiting without saving due to an unexpected error.")
+
+
+if _name_ == "_main_":
+    main()
